@@ -5,8 +5,9 @@ namespace TS.API.Controllers
     public class SampleController : ApiController
     {
         private static string _name = "world";
-        private static object _lock;
+        private static object _lock = new object();
 
+        [HttpGet]
         [Route("api/sample/Hello")]
         public string Hello()
         {
@@ -17,12 +18,13 @@ namespace TS.API.Controllers
         /// <summary>
         /// The FromUri allows it to look past the "Name" to find the parameter
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="q"></param>
+        [HttpGet]
         [Route("api/sample/Name")]
-        public void Name([FromUri]string name)
+        public void Name(string q)
         {
             lock (_lock)
-                _name = name;
+                _name = q;
         }
     }
 }
