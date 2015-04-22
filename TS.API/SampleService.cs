@@ -36,7 +36,7 @@ namespace TS.API
             config.MapHttpAttributeRoutes();
             app.UseWebApi(config);
             GlobalConfiguration.Configuration.UseSqlServerStorage(
-                @"Data Source=(localDb)\ProjectsV12;Integrated Security=True;Pooling=False",
+                @"Data Source=(localDb)\ProjectsV12;Initial Catalog=Hangfire;Integrated Security=True;Pooling=False",
                 new SqlServerStorageOptions
                 {
                     QueuePollInterval = TimeSpan.FromSeconds(10)
