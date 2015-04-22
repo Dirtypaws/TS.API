@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C4D8AE
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Hangfire", "Hangfire\Hangfire.sqlproj", "{35F5AF35-31B8-4726-AFD9-C94BDD7268C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,12 @@ Global
 		{C1F3363F-3B9E-43BB-9BB9-3DE6B3321EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1F3363F-3B9E-43BB-9BB9-3DE6B3321EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1F3363F-3B9E-43BB-9BB9-3DE6B3321EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F5AF35-31B8-4726-AFD9-C94BDD7268C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F5AF35-31B8-4726-AFD9-C94BDD7268C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F5AF35-31B8-4726-AFD9-C94BDD7268C8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{35F5AF35-31B8-4726-AFD9-C94BDD7268C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F5AF35-31B8-4726-AFD9-C94BDD7268C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F5AF35-31B8-4726-AFD9-C94BDD7268C8}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

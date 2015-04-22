@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Web.Http;
+using Hangfire;
+using Hangfire.SqlServer;
 using Microsoft.Owin.Hosting;
 using Owin;
 
@@ -28,11 +30,20 @@ namespace TS.API
 
     public class WebPipeline
     {
-        public void Configuration(IAppBuilder application)
+        public void Configuration(IAppBuilder app)
         {
             var config = new HttpConfiguration();
             config.MapHttpAttributeRoutes();
-            application.UseWebApi(config);
+            app.UseWebApi(config);
+            GlobalConfiguration.Configuration.UseSqlServerStorage(
+                @"Data Source=(localDb)\ProjectsV12;Integrated Security=True;Pooling=False",
+                new SqlServerStorageOptions
+                {
+                    QueuePollInterval = TimeSpan.FromSeconds(10)
+                });
+
+            app.UseHangfireDashboard();
+            app.UseHangfireServer();
         }
     }
 }
